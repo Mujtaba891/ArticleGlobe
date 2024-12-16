@@ -17,9 +17,9 @@ header {
     border-bottom: 4px solid #0056b3;
 }
 
-header h1 {
+header h3 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 20px;
 }
 
 /* Main Content Styling */
@@ -220,4 +220,26 @@ hr {
     margin: 5px 0;
 }
 
+.accept-terms {
+      display: none;
+      margin-top: 10px;
+    }
+    #uploadButton {
+      display: none;
+      margin-top: 10px;
+    }
+    .vibrate {
+      animation: vibrate 0.3s linear infinite;
+    }
+    @keyframes vibrate {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+    .bottom-button-container button {
+      background: linear-gradient( #448FE9, #00D7FF);
+      color: #FFFFFF;
+    }
 /* End of CSS */

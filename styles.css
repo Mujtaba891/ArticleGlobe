@@ -53,7 +53,7 @@ footer {
   padding: 10px 20px;
 }
 
-footer button {
+footer span a {
   padding: 10px 20px;
   background: #fff;
   color: #2575fc;
@@ -85,6 +85,7 @@ footer button:hover {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
 }
 
 .article-card:hover {
@@ -245,11 +246,14 @@ button:hover {
   }
 
   #article-details h1 {
-    font-size: 22px;
+    font-size: 12px;
   }
 
   footer button {
     padding: 8px 15px;
     font-size: 14px;
+  }
+  footer span {
+    color: white;
   }
 }

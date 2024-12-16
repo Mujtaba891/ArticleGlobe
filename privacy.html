@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Article Globe-Terms & Conditions</title>
   <link rel="stylesheet" href="privacy.css">
-  <script src="privacy.js" defer></script>
 </head>
 <body>
   <!-- Header -->
   <header class="header">
-    <h1>Welcome to Our Article Submission Platform</h1>
+    <h3>Welcome to the terms/policies of ArticleGlobe</h3>
+  <p id="uploadMessage">Upload your article <button id="uploadHere" type="button">here</button></p>
   </header>
 
   <!-- Body -->
   <main class="main-content">
     <!-- Button to Upload Article Page -->
       <div class="bottom-button-container">
-        <button id="proceedToUpload" class="action-btn" disabled>Proceed to Upload Article</button>
+        <button type="button"><a href="#footer">upload Article</a></button>
       </div>
 
     <!-- Terms & Conditions and Privacy Policy -->
@@ -171,22 +171,21 @@
       <li><strong>Email:</strong> <a href="mailto:mujtabaalam010@gmail.com">mujtabaalam010@gmail.com</a></li>
       <li><strong>Phone:</strong><a href="https://wa.me/919797060239">+91-9797060239</a></li>
     </ul>
-      <!-- Accept Terms Checkbox -->
-      <div class="accept-terms">
-        <input type="checkbox" id="acceptTerms" />
-        <label for="acceptTerms">I have read and agree to the Terms & Conditions and Privacy Policy</label>
-      </div>
+    <!-- Accept Terms Checkbox -->
+    <div class="accept-terms" id="acceptTermsDiv">
+      <input type="checkbox" id="acceptTerms" />
+      <label for="acceptTerms">I have read and agree to the Terms & Conditions and Privacy Policy</label>
+    </div>
+    
+    <button id="uploadButton" type="button" onclick="redirectToUpload()">Upload</button>
+    
     </section>
-
-      <!-- Button to Upload Article Page -->
-      <div class="bottom-button-container">
-        <button id="proceedToUpload" class="action-btn" disabled>Proceed to Upload Article</button>
-      </div>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <p>© 2024 Article Submission Platform. All Rights Reserved.</p>
   </footer>
+  <script src="privacy.js"></script>
 </body>
 </html>
