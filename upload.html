@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Article</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.image-preview {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+<body>
+  <div class="form-container">
+    <h2>Submit Your Article</h2>
+    <form id="articleForm">
+      <div class="form-group">
+        <label for="image">Enter Image URL:</label>
+        <input type="url" id="imageUrl" name="imageUrl" placeholder="Enter image URL" required>
+        <div class="image-preview">
+          <p>Image shown here</p>
+          <img id="imagePreview" alt="Image Preview" style="width: 100%; border: 2px dashed #333;">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="subtitle">Subtitle (optional):</label>
+        <input type="text" id="subtitle" name="subtitle">
+      </div>
+      <div class="form-group">
+        <label for="by">Written by:</label>
+        <input type="text" id="by" name="by" required>
+      </div>
+      <div class="form-group">
+        <label for="introduction">introduction:</label>
+        <textarea id="introduction" name="introduction" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="cause">Cause:</label>
+        <textarea id="cause" name="cause" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="effects">Effects:</label>
+        <textarea id="effects" name="effects" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="control">Control:</label>
+        <textarea id="control" name="control" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="conclusion">Conclusion:</label>
+        <textarea id="conclusion" name="conclusion" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+  <script>
+    // Preview the image when the user enters the URL
+document.getElementById('imageUrl').addEventListener('input', function(event) {
+  const imageUrl = event.target.value;
+  const imagePreview = document.getElementById('imagePreview');
+  imagePreview.src = imageUrl;
+  const imageText = document.querySelector('.image-preview p');
+  if (imageUrl) {
+    imageText.style.display = 'none';
+  } else {
+    imageText.style.display = 'block';
+  }
+});
+
+// Handle form submission
+document.getElementById('articleForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  // Create JSON object from form data
+  const articleData = {
+    id: Date.now(), // Unique ID for the article
+    title: form.title.value,
+    subtitle: form.subtitle.value || '',
+    by: form.by.value,
+    introduction: form.introduction.value,
+    cause: form.cause.value,
+    effects: form.effects.value,
+    control: form.control.value,
+    conclusion: form.conclusion.value,
+    image: form.imageUrl.value.split('/').pop() // Get the image name from URL
+  };
+
+  // Prepare the email body with JSON data
+  const emailSubject = "New Article Submission";
+  const emailBody = `Article Submission:\n\n${JSON.stringify(articleData, null, 2)}`;
+
+  // Send the email (using mailto: for simplicity)
+  window.location.href = `mailto:mujtabaalam010@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+   // Send the email (using mailto: for simplicity)
+  window.location.href = `mailto: alammujtaba49@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+  // Log the data to console (for testing)
+  console.log("Submitted Article Data:", articleData);
+
+  alert('Article submitted successfully!');
+});
+  </script>
+</body>
+</html>

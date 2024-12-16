@@ -1,0 +1,255 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+header:hover{
+  color: linear-gradient(to right, #A506FF, #5D06FF, #7455AD);
+}
+
+header button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+header button i {
+  margin-right: 5px;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+footer button {
+  padding: 10px 20px;
+  background: #fff;
+  color: #2575fc;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+footer button:hover {
+  background: #2575fc;
+  color: #fff;
+}
+
+/* Home Page */
+#articles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.article-card {
+  background: #fff;
+  border: 2px solid #6a11cb;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.article-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.article-card h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  padding: 0 10px;
+  color: #175DF0;
+  font-weight: bold;
+}
+
+.article-card:hover h2 {
+  color: #6a11cb;
+}
+
+.article-card p {
+  font-size: 14px;
+  color: #555;
+  padding: 0 10px 10px;
+}
+.article-card p1{
+  margin-left: 200px;
+}
+
+.article-card .read-more {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  background: #6a11cb;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.article-card .read-more:hover {
+  background: #2575fc;
+}
+
+/* View Page */
+#article-details {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  border: 2px solid #2575fc;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#article-details img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+#article-details img:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#article-details h2 {
+  font-size: 17px;
+  color: #4D68A2;
+  margin-bottom: 10px;
+}
+
+#article-details h4 {
+  font-size: 18px;
+  color: #4D68A2;
+  margin-bottom: 15px;
+}
+
+#article-details p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+#article-details ul {
+  list-style: square;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+#article-details ul li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.article-card {
+  animation: fadeIn 0.5s ease-in;
+}
+
+#article-details {
+  animation: slideIn 0.5s ease-in;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  .article-card {
+    margin-bottom: 20px;
+  }
+
+  #article-details h1 {
+    font-size: 22px;
+  }
+
+  footer button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
