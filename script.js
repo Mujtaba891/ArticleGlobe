@@ -1,4 +1,4 @@
-let currentArticleIndex = 0;
+/*let currentArticleIndex = 0;
 
 // Fetch data
 fetch("data.json")
@@ -65,4 +65,4 @@ function displayArticleDetails(articles) {
       window.location.reload();
     }
   });
-}
+}*/
