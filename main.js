@@ -58,7 +58,21 @@ const articles = [
 "effects": "", 
 "control": "", 
 "conclusion": "", 
-"image": "dargah.jpg" }
+"image": "dargah.jpg" },
+{ "id": 6,
+"title": "The Reality of Indian News Channels",
+"subtitle": "An Insight into Modern Journalism ",
+"by": "Author ",
+"introduction": "Indian news channels, once heralded as the torchbearers of democracy and unbiased reporting, now face significant criticism for sensationalism, politicization, and compromised ethics.",
+"cause": "The drive for higher TRPs, corporate ownership, and political affiliations have led news channels to prioritize entertainment and propaganda over factual reporting.",
+"effects": "This shift has resulted in polarized viewers, diminished trust in journalism, and the undermining of democratic values. Serious issues like climate change and poverty are often sidelined for celebrity gossip or divisive debates.",
+"control": "To restore credibility, news channels must adopt stricter journalistic ethics, transparency in ownership, and invest in investigative journalism. Viewers should also seek diverse sources and engage critically with news content.",
+"conclusion": "Indian news channels play a vital role in society but must prioritize truth and integrity over sensationalism. Responsible journalism and informed viewership are key to fostering a healthy democracy.",
+"image": "news.png" 
+}
+/* 
+Article Submission: { "id": 5, "title": "Tittle", "subtitle": "Sub-tittle ", "by": "Author ", "introduction": "Intro", "cause": "Cause", "effects": "Effets", "control": "Controll", "conclusion": "Conclusion ", "image": "URL of image" } 
+Write in the form of this */
 ];
 
 // Display articles on Home Page

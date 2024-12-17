@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Submit Article</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <style>
-  body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 20px;
-}
+  *{
+    margin: 0;
+    padding: 0;
+  }
 
 .form-container {
-  max-width: 600px;
+  max-width: 95vw;
   margin: 0 auto;
   background-color: white;
   padding: 20px;
@@ -72,11 +71,25 @@ textarea {
   max-width: 100%;
   height: auto;
 }
+#back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(#08A2FF, #025384);
+  border: none;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+}
 </style>
 <body>
+  <header>
+    <button id="back-button"><a href="privacy.html"><i class="fas fa-arrow-left"></i> Back </a></button>
+    <h1><h1>Article</h1><img src="logo2.png" alt="logo" width="100px" height="100px"> <h1>Globe</h1></h1>
+  </header>
   <div class="form-container">
     <h2>Submit Your Article</h2>
-    <form id="articleForm">
+ <!--<form id="articleForm">
       <div class="form-group">
         <label for="image">Enter Image URL:</label>
         <input type="url" id="imageUrl" name="imageUrl" placeholder="Enter image URL" required>
@@ -118,7 +131,23 @@ textarea {
         <textarea id="conclusion" name="conclusion" required></textarea>
       </div>
       <button type="submit" class="submit-btn">Submit</button>
-    </form>
+    </form> -->
+    
+ <iframe
+      id="JotFormIFrame-243509040775053"
+      title="Article submission"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen"
+      src="https://form.jotform.com/243509040775053"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:539px;border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-243509040775053']", "https://form.jotform.com/")</script>
+    
   </div>
   <script>
     // Preview the image when the user enters the URL
@@ -169,5 +198,6 @@ document.getElementById('articleForm').addEventListener('submit', function(event
   alert('Article submitted successfully!');
 });
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
